@@ -16,7 +16,9 @@ export const _requestToApi = function* (action) {
 
     const result = yield AuthService.login(payload).subscribe(
       (res) => {
-        console.log("after response:", res);
+
+
+        return res.data.success === true ? res.data.success : false
 
         // return response 200 or error
         if (res.data.status === "success") {
@@ -31,12 +33,15 @@ export const _requestToApi = function* (action) {
 
 
 
-    result.status === 201 ?
+    result === true ?
       yield put({
         type: actionType.AUTH_RESULT,
         loading: false,
         count: 1111111
       }) : console.log('Login ERror password not match')
+
+
+
   } catch (err) {
     console.log('Error ', err)
   }
