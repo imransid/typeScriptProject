@@ -1,0 +1,159 @@
+.sign-in-blk {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 350px;
+	margin: 0 auto;
+	text-align: left;
+
+	.auth-btm-buttons {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		button {
+			height: 40px;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.auth-form-status {
+		color: #74849e;
+		font-size: 12px;
+		margin: 0;
+		min-height: 20px;
+		display: block;
+		line-height: 20px;
+		&.invisiable {
+			opacity: 0;
+		}
+	}
+
+	.auth-input .MuiOutlinedInput-root {
+		width: 100%;
+	}
+	.auth-input .MuiFormControl-root {
+		width: 100%;
+	}
+	.auth-form {
+		width: 100%;
+	}
+
+	.auth-input label {
+		display: block;
+		font-size: 14px;
+		font-weight: 600;
+		color: rgb(67, 83, 105);
+		margin-bottom: 8px;
+	}
+	.auth-check-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 15px;
+		a {
+			color: #0089ff;
+			font-weight: 600;
+		}
+	}
+}
+
+.custom-checkbox {
+	.container {
+		display: block;
+		position: relative;
+		padding-left: 25px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-weight: 400 !important;
+		font-size: 14px !important;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.container input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.checkmark {
+		position: absolute;
+		top: 5px;
+		left: 0;
+		height: 15px;
+		width: 15px;
+		border: 1px solid #ddd;
+		border-radius: 3px;
+	}
+
+	.container input:checked ~ .checkmark {
+		background-color: #2196f3;
+		border: none;
+	}
+
+	.checkmark:after {
+		content: "";
+		position: absolute;
+		display: none;
+	}
+
+	.container input:checked ~ .checkmark:after {
+		display: block;
+	}
+
+	.container .checkmark:after {
+		left: 6px;
+		top: 2px;
+		width: 5px;
+		height: 9px;
+		border: solid white;
+		border-top-width: medium;
+		border-right-width: medium;
+		border-bottom-width: medium;
+		border-left-width: medium;
+		border-width: 0 3px 3px 0;
+		transform: rotate(45deg);
+	}
+
+	.auth-check-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+	}
+	.auth-check-box a {
+		color: #0089ff;
+		font-weight: 600;
+		font-size: 14px;
+	}
+	.custom-checkbox label.container {
+		padding-left: 22px;
+		font-size: 14px;
+		color: #4a5669;
+		font-weight: 400;
+	}
+	.custom-checkbox label {
+		font-size: 14px;
+		color: #4a5669;
+		font-weight: 400;
+	}
+	.custom-checkbox .checkmark {
+		height: 15px;
+		width: 15px;
+		background: none;
+		border: 1px solid #43536954;
+		border-radius: 3px;
+		top: 5px;
+	}
+	.custom-checkbox label {
+		padding-left: 0;
+	}
+}

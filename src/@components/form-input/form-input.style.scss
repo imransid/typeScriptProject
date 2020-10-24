@@ -1,0 +1,16 @@
+
+.form-input {
+    input {
+        outline: currentcolor none medium;
+        border: 1px solid rgb(229, 239, 255);
+        border-radius: 4px;
+        color: rgb(67, 83, 105);
+        font-size: 14px;
+        font-family: inherit;
+        padding: 0px 8px;
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: rgb(255, 255, 255);
+      }
+}
