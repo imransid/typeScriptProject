@@ -1,51 +1,33 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
 
+import {AuthState} from "./redux-store/reducers"
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.scss';
-import AuthPage from './@pages/AuthPage';
-import AuthWelcome from './@components/auth-welcome/AuthWelcome';
-
-import { Provider } from "react-redux";
-import store from "./@config/Store";
-
+import {useSelector} from "react-redux"
 
 function App() {
+
+  const pending = useSelector((state : AuthState) => state.auth.pending)
+
   return (
-<Provider store={store}>
-    <BrowserRouter>
-    <Fragment>
-      <Switch>
-      <Route exact path='/'   render={() => <AuthPage/>}  />
-      <Route exact path='/welcome'render={() => <AuthWelcome/>} />
-      {/* <AuthWelcome/> */}
-      </Switch>
-     
-    </Fragment>
-
-    </BrowserRouter>
-
-    </Provider>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
 export default App;
-
-
-
-// import React from "react";
-// import Nav from "./app/router/nav";
-// import { Provider } from "react-redux";
-// import store from "./app/config/store";
-
-// function App() {
-//   return (
-//     <Provider store={store}>
-//       <div className="App">
-//         <Nav />
-//       </div>
-//     </Provider>
-//   );
-// }
-
-// export default App;

@@ -1,44 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with React-TypeScript App with Redux & Tailwind CSS
 
-## Available Scripts
+## How To Run This Project
 
-In the project directory, you can run:
+Run `npm start`
+Project will be launch here : [http://localhost:3000](http://localhost:3420)
 
-### `yarn start`
+## Description of Folder Structure
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```text
+src
+|
+|-- api-client (axios setup and intercepting related)
+|
+|-- components (all tsx files i.e. components - layouts,screens,pages,header,footer,)
+|
+|-- environment (production or staging related configuration)
+|
+|-- interface (data-type definition of state/different objects)
+|
+|-- redux-store (redux setup - epic, reducer, store)
+|
+|-- service (api call to backend services)
+|
+|-- utils (helper-functions, constants are here)
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Description of Component Rendering Hierarchy
 
-### `yarn test`
+```text
+                     index.html
+                         |
+                         |
+                      index.tsx
+                         |
+                         |
+                       App.tsx
+                         |
+                         |
+                   MainLayout.tsx
+(MainLayout renders differnt screen-component as {children}
+      according to route setup | screen-component
+        renders sceen specific page-components)
+                         |
+                         |
+        ----------------------------------
+        |                |               |
+HeaderComponent.tsx  {children} FooterComponent.tsx
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Create a Similar Project By Yourself
 
-### `yarn build`
+### Step-1: Command for Creating TypeScript-React App
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npx create-react-app your-app-name --template typescript
+```
